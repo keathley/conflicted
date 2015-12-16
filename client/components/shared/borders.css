@@ -1,0 +1,15 @@
+.dark    { border-color: #555; }
+.primary { border-color: #2185D0; }
+.subtle  { border-color: #e0e1e2; }
+.danger  { border-color: #db2828; }
+
+.primary-hover:hover { border-color: #176dad; }
+.subtle-hover:hover  { border-color: #b0b0b0; }
+.danger-hover:hover  { border-color: #b32020; }
+
+.bordered {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.rounded { border-radius: 0.2rem; }
