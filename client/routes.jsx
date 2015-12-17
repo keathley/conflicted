@@ -1,11 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router'
 
-import App from './components/App'
-import Hello from './components/Hello'
+import ChatRoom from './containers/ChatRoom'
 
 export const routes = (
-  <Route component={App}>
-    <Route path="/" component={Hello} />
-  </Route>
+  <Route path="/" component={ChatRoom} />
 )
