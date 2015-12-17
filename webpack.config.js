@@ -24,11 +24,10 @@ var entry = './client/index.jsx'
 
 module.exports = {
   debug: !isProd
-, devtool: 'eval'
+, devtool: 'cheap-module-eval-source-map'
 , entry: isProd ? entry : [
-    'webpack-dev-server/client?' + publicPath,
-    'webpack/hot/only-dev-server',
     entry
+  , 'webpack-hot-middleware/client?path=http://localhost:4001/__webpack_hmr'
   ]
 
 , output: {
@@ -41,7 +40,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: (isProd ? [] : [ 'react-hot' ]).concat([ 'babel' ]),
+        loaders: [ 'babel' ],
         exclude: /node_modules/
       }
     , {test: /\.css$/, loader: isProd ? extract(cssLoaders) : cssLoaders}
@@ -69,6 +68,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[chunkhash].js'),
     new ExtractTextPlugin('[name].[hash].css')
   ] : [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
