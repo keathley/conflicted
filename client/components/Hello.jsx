@@ -9,7 +9,7 @@ const Hello = React.createClass({
     return (
       <div className={ hello }>
         <h2 className={ title }>
-          Hello New React App.
+          Hello World
         </h2>
 
         <p className={ text }>
