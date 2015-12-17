@@ -27,7 +27,7 @@ module.exports = {
 , devtool: 'cheap-module-eval-source-map'
 , entry: isProd ? entry : [
     entry
-  , 'webpack-hot-middleware/client?path=http://localhost:4001/__webpack_hmr'
+  , `webpack-hot-middleware/client?path=${publicPath}__webpack_hmr`
   ]
 
 , output: {
