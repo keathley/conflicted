@@ -1,0 +1,18 @@
+@value medium as bp-medium, large as bp-large from "./shared/breakpoints.css";
+
+.tweetList {
+  column-count: 1;
+  column-gap: 1.5rem;
+  max-width: 62rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+@media bp-medium {
+  .tweetList { column-count: 2; }
+}
+
+@media bp-large {
+  .tweetList { column-count: 3; }
+}

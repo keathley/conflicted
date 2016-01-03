@@ -2,7 +2,7 @@ defmodule Conflicted.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Conflicted.RoomChannel
+  channel "tweets:*", Conflicted.TweetChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

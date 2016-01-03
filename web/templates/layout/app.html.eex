@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <%= @inner %>
+    <%= render Conflicted.PageView, "index.html" %>
     <%= if Mix.env == :dev do %>
       <script src="http://localhost:4001/bundle.js"></script>
     <% else %>

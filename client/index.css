@@ -6,7 +6,10 @@
 
 /* Box Sizing */
 
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
 
 html,
 body {

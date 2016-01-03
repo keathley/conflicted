@@ -1,0 +1,47 @@
+.card {
+  composes: bordered rounded subtle shadowed from "./shared/borders.css";
+  display: inline-block;
+  max-width: 22rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.info {
+  padding-top: 0.8rem;
+  padding-right: 1.2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.2rem;
+  background-color: #fff;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.title {
+  display: flex;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #8f8f8f;
+  background-color: #fff;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  justify-content: flex-start;
+}
+
+.author {
+  composes: link link-hover from './shared/typography.css';
+  flex-grow: 3;
+}
+
+.date {
+  flex-grow: 1;
+  flex-size: 0.9rem;
+  font-weight: 200;
+  text-align: right;
+}

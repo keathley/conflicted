@@ -1,6 +1,8 @@
 .white { color: #fff; }
 .primary { color: #222; }
 .subtle { color: rgba(0, 0, 0, 0.6); }
+.purple { color: #8849ae; }
+.purple-dark { color: #6c3a8a; }
 
 .subtle-hover:hover { color: rgba(0, 0, 0, 0.8); }
 
@@ -23,8 +25,17 @@
 
 .text {
   composes: regular line-height light primary;
-  margin: 0 0 1.25rem;
+  margin: 0;
 }
+
+.link {
+  composes: purple;
+  padding-bottom: 0.2rem;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.link-hover:hover { color: #6c3a8a; }
 
 .title {
   composes: heavy medium primary;
