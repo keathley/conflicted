@@ -22,6 +22,7 @@
 .base { font-family: Helvetica Neue, Helvetica, Arial, sans-serif; }
 
 .center { text-align: center; }
+.right  { text-align: right; }
 
 .text {
   composes: regular line-height light primary;
@@ -38,7 +39,7 @@
 .link-hover:hover { color: #6c3a8a; }
 
 .title {
-  composes: heavy medium primary;
+  composes: heavy large white;
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }

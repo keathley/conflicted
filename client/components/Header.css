@@ -1,0 +1,15 @@
+.header {
+  composes: white center from './shared/typography.css';
+  composes: dark from './shared/backgrounds.css';
+  width: 100%;
+}
+
+.container {
+  max-width: 62rem;
+  padding-top: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}

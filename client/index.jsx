@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { Header } from './components/Header'
 import TweetListContainer from './containers/TweetListContainer'
 import DevTools from './containers/DevTools'
 import createStore from './store'
@@ -31,6 +32,7 @@ import './index.css'
 ReactDOM.render(
   <Provider store={store}>
     <div>
+      <Header />
       <TweetListContainer />
       <DevTools />
     </div>

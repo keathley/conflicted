@@ -1,5 +1,5 @@
 import React from 'react'
-import { date } from './Tweet.css'
+import style from './Tweet.css'
 import moment from 'moment'
 
 export const PostedAt = ({date}) => {
@@ -7,7 +7,7 @@ export const PostedAt = ({date}) => {
   let timeSince = (date ? moment(date) : moment()).fromNow()
 
   return (
-    <span className={date}>
+    <span className={style.date}>
       {timeSince}
     </span>
   )
