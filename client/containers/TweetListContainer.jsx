@@ -4,7 +4,7 @@ import { TweetList } from '../components/TweetList'
 
 const mapStateToProps = (state) => {
   return {
-    tweets: state.tweets.toJS()
+    tweets: state.tweets.toIndexedSeq()
   }
 }
 

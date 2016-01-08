@@ -1,16 +1,24 @@
-import { List } from 'immutable'
-import { SET_STATE, ADD_TWEET } from '../actions'
+import { Map } from 'immutable'
+import { SET_STATE, LIKE_TWEET } from '../actions'
 
-const addTweet = (state, tweet) => state.concat([tweet])
+const setState = (state, newState) => {
+  let tweets = newState.map((tweet) => [tweet.id, tweet])
+  return state.merge(tweets)
+}
 
-const setState = (state, newState) => state.merge(newState)
+const likeTweet = (state, id) => {
+  console.log('updating');
+  let newState = state.updateIn([id, 'likes'], val => val + 1)
+  console.log('done updating');
+  return newState
+}
 
-export default function tweetsReducer(state=List(), action) {
+export default function tweetsReducer(state=Map({}), action) {
   switch(action.type) {
   case SET_STATE:
     return setState(state, action.state)
-  case ADD_TWEET:
-    return addTweet(state, action.tweet)
+  case LIKE_TWEET:
+    return likeTweet(state, action.id)
   default:
     return state
   }

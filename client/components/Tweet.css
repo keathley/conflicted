@@ -1,5 +1,6 @@
 .card {
   composes: bordered rounded subtle shadowed from "./shared/borders.css";
+  composes: white from './shared/backgrounds';
   display: inline-block;
   max-width: 22rem;
   margin-bottom: 1.5rem;
@@ -45,4 +46,18 @@
   flex-size: 0.9rem;
   font-weight: 200;
   text-align: right;
+}
+
+.actions {
+  composes: top from './shared/borders.css';
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
+}
+
+.meta {
+  composes: gray from './shared/backgrounds';
+  padding-top: 0.5rem;
+  padding-right: 1.2rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.2rem;
 }

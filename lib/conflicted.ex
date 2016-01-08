@@ -12,7 +12,9 @@ defmodule Conflicted do
       # Start the Ecto repository
       worker(Conflicted.Repo, []),
       # Here you could define other workers and supervisors as children
-      worker(Task, [fn -> stream_task(search_term) end])
+      # worker(Task, [fn -> stream_task("elixir-lang") end]),
+      # worker(Task, [fn -> stream_task("starwars") end]),
+      worker(Task, [fn -> stream_task("codemash") end])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

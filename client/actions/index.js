@@ -1,5 +1,5 @@
-export const SET_STATE = 'SET_STATE'
-export const ADD_TWEET = 'ADD_TWEET'
+export const SET_STATE  = 'SET_STATE'
+export const LIKE_TWEET = 'LIKE_TWEET'
 
 export function setState(state) {
   return {
@@ -8,6 +8,10 @@ export function setState(state) {
   }
 }
 
-export function addTweet(tweet) {
-  return { type: ADD_TWEET, tweet }
+export function likeTweet(id) {
+  return {
+    meta: {remote: true},
+    type: LIKE_TWEET,
+    id
+  }
 }

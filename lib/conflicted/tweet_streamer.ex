@@ -14,8 +14,9 @@ defmodule Conflicted.TweetStreamer do
       raw_tweet
       |> new_tweet
       |> Repo.insert!
+      |> IO.inspect
 
-    Conflicted.Endpoint.broadcast!("tweets:stream", "new:tweet", tweet)
+    Conflicted.Endpoint.broadcast!("tweets:stream", "state", tweet)
   end
 
   defp new_tweet(tweet) do

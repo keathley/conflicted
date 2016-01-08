@@ -6,12 +6,13 @@ defmodule Conflicted.Tweet do
     field :content, :string
     field :source_url, :string
     field :image_url, :string
+    field :likes, :integer, default: 0
 
     timestamps
   end
 
   @required_fields ~w(author content source_url image_url)
-  @optional_fields ~w()
+  @optional_fields ~w(likes)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

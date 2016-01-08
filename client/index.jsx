@@ -5,10 +5,8 @@ import { Header } from './components/Header'
 import TweetListContainer from './containers/TweetListContainer'
 import DevTools from './containers/DevTools'
 import createStore from './store'
-import { setState, addTweet } from './actions'
+import { setState, addTweet, likeTweet } from './actions'
 import { Socket } from 'phoenix-socket'
-
-const store = createStore()
 
 let socket = new Socket("/socket")
 socket.connect()
@@ -19,13 +17,15 @@ channel.join()
   .receive("ok", resp => { store.dispatch(setState(resp)) })
   .receive("error", resp => { console.log("Unable to join", resp); })
 
-channel.on("state", state => {
-  store.dispatch(setState(state))
+channel.on("state", tweet => {
+  store.dispatch(setState([tweet]))
 })
 
 channel.on("new:tweet", tweet => {
   store.dispatch(addTweet(tweet))
 })
+
+const store = createStore(channel)
 
 import './index.css'
 
@@ -34,8 +34,8 @@ ReactDOM.render(
     <div>
       <Header />
       <TweetListContainer />
-      <DevTools />
     </div>
   </Provider>
 , document.getElementById('app')
 )
+// <DevTools />
