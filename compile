@@ -1,3 +1,2 @@
 info "Building static assets"
-NODE_ENV=production webpack -p
 mix phoenix.digest
