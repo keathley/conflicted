@@ -1,2 +1,2 @@
 info "Building static assets"
-mix phoenix.digest
+MIX_ENV=prod mix phoenix.digest
