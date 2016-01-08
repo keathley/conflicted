@@ -1,4 +1,4 @@
-var isProd         = process.env.MIX_ENV === 'prod'
+var isProd         = process.env.MIX_ENV === 'prod' || process.env.MIX_ENV === 'production'
   , webpack        = require('webpack')
   , path           = require('path')
   , autoprefixer   = require('autoprefixer')
@@ -43,7 +43,7 @@ module.exports = {
         loaders: [ 'babel' ],
         exclude: /node_modules/
       }
-    , {test: /\.css$/, loader: isProd ? extract(cssLoaders) : cssLoaders}
+    , {test: /\.css$/, loader: isProd ? cssLoaders : cssLoaders}
     , {test: /\.png$/, loader: "url?limit=100000&mimetype=image/png"}
     , {test: /\.svg$/, loader: "url?limit=100000&mimetype=image/svg+xml"}
     , {test: /\.gif$/, loader: "url?limit=100000&mimetype=image/gif"}
@@ -64,9 +64,7 @@ module.exports = {
 
 , plugins: isProd ? [
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-    new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[chunkhash].js'),
-    new ExtractTextPlugin('[name].[hash].css')
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
   ] : [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
