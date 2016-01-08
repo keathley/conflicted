@@ -4,6 +4,8 @@ defmodule Conflicted.TweetChannel do
   alias Conflicted.Repo
   alias Conflicted.Tweet
 
+  import Ecto.Query, only: [from: 2]
+
   def join("tweets:stream", _message, socket) do
     tweets = Conflicted.Repo.all(Conflicted.Tweet)
     {:ok, tweets, socket}
@@ -14,10 +16,8 @@ defmodule Conflicted.TweetChannel do
   end
 
   def handle_in("action", %{"type" => "LIKE_TWEET", "id" => id}, socket) do
-    changeset =
-      Tweet
-      |> Repo.get!(id)
-      |> Tweet.changeset(%{"likes" => tweet.likes+1})
+    tweet = Repo.get!(Tweet, id)
+    changeset = Tweet.changeset(tweet, %{"likes" => tweet.likes+1})
 
     case Conflicted.Repo.update(changeset) do
       {:ok, tweet} ->
