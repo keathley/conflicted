@@ -28,12 +28,19 @@
   },
   "homepage": "https://github.com/keathley/webpack-react-skeleton",
   "dependencies": {
-    "history": "^1.15.0",
     "immutable": "^3.7.5",
+    "moment": "^2.11.0",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.3",
+    "phoenix-socket": "^1.1.0",
+    "react": "^0.14.5",
+    "react-addons-pure-render-mixin": "^0.14.5",
     "react-dom": "^0.14.3",
-    "react-router": "^1.0.1"
+    "react-fontawesome": "^0.3.3",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",

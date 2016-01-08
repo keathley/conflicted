@@ -3,6 +3,8 @@
 .primary { background-color: #2185D0; }
 .subtle  { background-color: #e0e1e2; }
 .danger  { background-color: #db2828; }
+.dark    { background-color: #3c3752; }
+.gray    { background-color: #DAD7DC; }
 
 .primary-hover:hover { background-color: #176dad; }
 .subtle-hover:hover  { background-color: #b0b0b0; }

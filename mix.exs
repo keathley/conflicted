@@ -30,11 +30,13 @@ defmodule Conflicted.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.0.4"},
-     {:phoenix_ecto, "~> 1.1"},
+    [{:phoenix, "~> 1.1.1"},
+     {:phoenix_ecto, "~> 2.0.0"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:oauth, github: "tim/erlang-oauth"},
+     {:extwitter, "~> 0.1"},
      {:cowboy, "~> 1.0"}]
   end
 

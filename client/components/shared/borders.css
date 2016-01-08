@@ -1,7 +1,9 @@
 .dark    { border-color: #555; }
 .primary { border-color: #2185D0; }
-.subtle  { border-color: #e0e1e2; }
+.subtle  { border-color: rgba(215, 216, 224, 0.47); }
+.break   { border-color: rgb(192, 193, 199); }
 .danger  { border-color: #db2828; }
+.shadow  { border-color: rgba(193, 193, 193, 0.75); }
 
 .primary-hover:hover { border-color: #176dad; }
 .subtle-hover:hover  { border-color: #b0b0b0; }
@@ -12,4 +14,17 @@
   border-style: solid;
 }
 
+.shadowed {
+  composes: shadow;
+  border-bottom-width: 2px;
+  border-bottom-style: solid
+}
+
+.top {
+  composes: break;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
 .rounded { border-radius: 0.2rem; }
+.none { border: 0; }
