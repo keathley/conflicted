@@ -8,7 +8,7 @@ export default function configureStore(channel) {
   const createStoreWithMiddleware = compose(
     applyMiddleware(remoteActionMiddleware(channel))
   // , DevTools.instrument()
-  , persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
+  // , persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
   )(createStore)
 
   const store = createStoreWithMiddleware(reducer)
