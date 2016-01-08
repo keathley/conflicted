@@ -7,7 +7,9 @@ defmodule Conflicted.TweetChannel do
   import Ecto.Query, only: [from: 2]
 
   def join("tweets:stream", _message, socket) do
-    tweets = Conflicted.Repo.all(Conflicted.Tweet)
+    query = from t in Tweet,
+      limit: 20
+    tweets = Conflicted.Repo.all(query)
     {:ok, tweets, socket}
   end
 

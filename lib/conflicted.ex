@@ -30,10 +30,6 @@ defmodule Conflicted do
     :ok
   end
 
-  defp search_term do
-    "elixir-lang"
-  end
-
   defp stream_task(term) do
     Conflicted.TweetStreamer.stream(term)
     |> Enum.to_list
