@@ -13,8 +13,8 @@ defmodule Conflicted do
       worker(Conflicted.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Task, [fn -> stream_task("elixir-lang") end]),
-      # worker(Task, [fn -> stream_task("starwars") end]),
-      worker(Task, [fn -> stream_task("codemash") end])
+      worker(Task, [fn -> stream_task("elixirfriends") end], id: ElixirFriendsStreamer),
+      worker(Task, [fn -> stream_task("revconf") end], id: Streamer)
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
