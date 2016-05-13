@@ -8,6 +8,7 @@ defmodule Conflicted.TweetChannel do
 
   def join("tweets:stream", _message, socket) do
     query = from t in Tweet,
+      order_by: [desc: t.inserted_at],
       limit: 20
     tweets = Conflicted.Repo.all(query)
     {:ok, tweets, socket}
