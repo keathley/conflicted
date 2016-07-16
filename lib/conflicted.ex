@@ -14,7 +14,8 @@ defmodule Conflicted do
       # Here you could define other workers and supervisors as children
       # worker(Task, [fn -> stream_task("elixir-lang") end]),
       worker(Task, [fn -> stream_task("elixirfriends") end], id: ElixirFriendsStreamer),
-      worker(Task, [fn -> stream_task("revconf") end], id: Streamer)
+      worker(Task, [fn -> stream_task("codestock") end], id: CodeStockStreamer),
+      worker(Task, [fn -> stream_task("codestock2016") end], id: Streamer),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
