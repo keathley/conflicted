@@ -11,7 +11,7 @@
   "hackney": {:hex, :hackney, "1.4.7"},
   "idna": {:hex, :idna, "1.0.2"},
   "mimerl": {:hex, :mimerl, "1.0.2"},
-  "oauth": {:git, "https://github.com/tim/erlang-oauth.git", "fca8163e8f7af867015e2413c4b03a4f8f4df0c9", []},
+  "oauth": {:git, "https://github.com/tim/erlang-oauth", "fca8163e8f7af867015e2413c4b03a4f8f4df0c9", []},
   "phoenix": {:hex, :phoenix, "1.1.4", "65809fba92eb94377372a5fb5a561197654bb8406e773cc47ca1a031bbe58019", [:mix], [{:poison, "~> 1.5 or ~> 2.0", [hex: :poison, optional: false]}, {:plug, "~> 1.0", [hex: :plug, optional: false]}, {:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}]},
   "phoenix_ecto": {:hex, :phoenix_ecto, "2.0.1", "24532a443b1686150fd14819a4a366eccf41135da2a2ed6ae2f78597828ecb0a", [:mix], [{:poison, "~> 1.3", [hex: :poison, optional: true]}, {:phoenix_html, "~> 2.2", [hex: :phoenix_html, optional: true]}, {:ecto, "~> 1.1.2", [hex: :ecto, optional: false]}]},
   "phoenix_html": {:hex, :phoenix_html, "2.5.1", "631053f9e345fecb5c87d9e0ccd807f7266d27e2ee4269817067af425fd81ba8", [:mix], [{:plug, "~> 0.13 or ~> 1.0", [hex: :plug, optional: false]}]},

@@ -19,7 +19,7 @@ defmodule Conflicted.Mixfile do
   def application do
     [mod: {Conflicted, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :extwitter]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,8 +35,8 @@ defmodule Conflicted.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:oauth, github: "tim/erlang-oauth"},
-     {:extwitter, "~> 0.1"},
+     {:oauth, git: "https://github.com/tim/erlang-oauth"},
+     {:extwitter, "~> 0.7.1"},
      {:cowboy, "~> 1.0"}]
   end
 

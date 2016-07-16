@@ -8,7 +8,7 @@ export const Header = () => {
     <header className={header}>
       <div className={container}>
         <h1 className={title}>
-          #ElixirFriends + #RevConf
+          #ElixirFriends + #CodeStock
         </h1>
       </div>
     </header>
